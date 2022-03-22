@@ -4,7 +4,7 @@
 
 MicroStrategy REST API Playground is a place you can see live demos of our REST API, API specifications, and code examples. You can also play with it without writing a single line of code.   
 
-You can access it at https://www.postman.com/microstrategysdk/.  If you are not familiar Postman interface, be sure to checkout [documents](https://learning.postman.com/docs/getting-started/introduction/) on Postman's learning center. 
+You can access it at https://www.postman.com/microstrategysdk/.  If you are not familiar Postman interface, be sure to check out [documents](https://learning.postman.com/docs/getting-started/introduction/) on Postman's learning center. 
 
 
 There are two collections in the workspace:
