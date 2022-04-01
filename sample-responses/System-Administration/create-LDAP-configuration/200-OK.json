@@ -1,0 +1,304 @@
+{
+  "serverHost": {
+    "name": "serverHost",
+    "value": "",
+    "typeDescription": "String: NonNull"
+  },
+  "serverPort": {
+    "name": "serverPort",
+    "value": 389,
+    "attrDependentOf": "serverSecureConn",
+    "typeDescription": "Int",
+    "metadata": {
+      "serverSecureConnMap": {
+        "Cleartext": 389,
+        "SSL": 636
+      }
+    }
+  },
+  "serverSecureConn": {
+    "name": "serverSecureConn",
+    "value": "Cleartext",
+    "typeDescription": "String: NonNull",
+    "metadata": {
+      "values": ["Cleartext", "SSL"],
+      "requireCertificateForSsl": true
+    }
+  },
+  "certPath": {
+    "name": "certPath",
+    "value": "",
+    "typeDescription": "String"
+  },
+  "useConnPool": {
+    "name": "useConnPool",
+    "value": true,
+    "typeDescription": "Boolean"
+  },
+  "ldapVerificationMethod": {
+    "name": "ldapVerificationMethod",
+    "value": "Binding",
+    "typeDescription": "String: NonNull",
+    "metadata": {
+      "values": ["Binding", "Password Comparison"]
+    }
+  },
+  "adminDn": {
+    "name": "adminDn",
+    "value": "",
+    "typeDescription": "String: NonNull"
+  },
+  "adminDnPassword": {
+    "name": "adminDnPassword",
+    "typeDescription": "String: NonNull"
+  },
+  "ldapServerVendor": {
+    "name": "ldapServerVendor",
+    "value": "Microsoft Active Directory",
+    "typeDescription": "String: NonNull",
+    "metadata": {
+      "values": [
+        "Other providers",
+        "Novell",
+        "Microsoft Active Directory",
+        "Sun ONE/iPlanet",
+        "IBM",
+        "OpenLDAP",
+        "HP-UX"
+      ],
+      "allowedValues": [
+        "Other providers",
+        "Microsoft Active Directory",
+        "OpenLDAP"
+      ]
+    }
+  },
+  "ldapDriverVendor": {
+    "name": "ldapDriverVendor",
+    "value": "OpenLDAP",
+    "typeDescription": "String: NonNull",
+    "metadata": {
+      "values": [
+        "Other providers",
+        "Novell",
+        "Microsoft Active Directory",
+        "Sun ONE/iPlanet",
+        "IBM",
+        "OpenLDAP",
+        "HP-UX"
+      ],
+      "allowedValues": [
+        "Other providers",
+        "Microsoft Active Directory",
+        "OpenLDAP"
+      ]
+    }
+  },
+  "libraryFiles": {
+    "name": "libraryFiles",
+    "value": ["libldap.so"],
+    "attrDependentOf": "ldapDriverVendor",
+    "typeDescription": "JsonArray of String: NonNull",
+    "metadata": {
+      "ldapDriverVendorMap": {
+        "Other providers": [],
+        "Novell": [],
+        "Microsoft Active Directory": [],
+        "Sun ONE/iPlanet": [],
+        "IBM": [],
+        "OpenLDAP": ["libldap.so"],
+        "HP-UX": []
+      }
+    }
+  },
+  "searchRoot": {
+    "name": "searchRoot",
+    "value": "",
+    "typeDescription": "String: NonNull"
+  },
+  "userAuthFilter": {
+    "name": "userAuthFilter",
+    "value": "(&(objectclass=person) (sAMAccountName=#LDAP_LOGIN#))",
+    "attrDependentOf": "ldapServerVendor",
+    "typeDescription": "String: NonNull",
+    "metadata": {
+      "ldapServerVendorMap": {
+        "Other providers": "(&(objectclass=person) (cn=#LDAP_LOGIN#))",
+        "Novell": "(&(objectclass=person) (cn=#LDAP_LOGIN#))",
+        "Microsoft Active Directory": "(&(objectclass=person) (sAMAccountName=#LDAP_LOGIN#))",
+        "Sun ONE/iPlanet": "(&(objectclass=person) (uid=#LDAP_LOGIN#))",
+        "IBM": "(&(objectclass=person) (cn=#LDAP_LOGIN#))",
+        "OpenLDAP": "(&(objectclass=person) (uid=#LDAP_LOGIN#))",
+        "HP-UX": "(&(objectclass=person) (uid=#LDAP_LOGIN#))"
+      }
+    }
+  },
+  "groupAuthFilter": {
+    "name": "groupAuthFilter",
+    "value": "(&(objectclass=group) (member=#LDAP_DN#))",
+    "attrDependentOf": "ldapServerVendor",
+    "typeDescription": "String: NonNull",
+    "metadata": {
+      "ldapServerVendorMap": {
+        "Other providers": "(&(objectclass=groupOfNames) (member=#LDAP_DN#))",
+        "Novell": "(&(objectclass=groupOfNames) (member=#LDAP_DN#))",
+        "Microsoft Active Directory": "(&(objectclass=group) (member=#LDAP_DN#))",
+        "Sun ONE/iPlanet": "(&(objectclass=groupOfUniqueNames) (uniqueMember=#LDAP_DN#))",
+        "IBM": "(&(objectclass=groupOfNames) (member=#LDAP_DN#))",
+        "OpenLDAP": "(&(objectclass=posixgroup) (member=#LDAP_DN#))",
+        "HP-UX": "(&(objectclass=groupOfUniqueNames) (uniqueMember=#LDAP_DN#))"
+      }
+    }
+  },
+  "groupSearchDepth": {
+    "name": "groupSearchDepth",
+    "value": 1,
+    "typeDescription": "Int"
+  },
+  "importUser": {
+    "name": "importUser",
+    "value": true,
+    "typeDescription": "Boolean"
+  },
+  "importGroup": {
+    "name": "importGroup",
+    "value": true,
+    "typeDescription": "Boolean"
+  },
+  "syncUser": {
+    "name": "syncUser",
+    "value": true,
+    "typeDescription": "Boolean"
+  },
+  "syncGroup": {
+    "name": "syncGroup",
+    "value": true,
+    "typeDescription": "Boolean"
+  },
+  "userImportFilter": {
+    "name": "userImportFilter",
+    "typeDescription": "String"
+  },
+  "groupImportFilter": {
+    "name": "groupImportFilter",
+    "typeDescription": "String"
+  },
+  "importUserAtLogin": {
+    "name": "importUserAtLogin",
+    "value": true,
+    "typeDescription": "Boolean"
+  },
+  "importGroupAtLogin": {
+    "name": "importGroupAtLogin",
+    "value": true,
+    "typeDescription": "Boolean"
+  },
+  "syncUserAtLogin": {
+    "name": "syncUserAtLogin",
+    "value": true,
+    "typeDescription": "Boolean"
+  },
+  "syncGroupAtLogin": {
+    "name": "syncGroupAtLogin",
+    "value": true,
+    "typeDescription": "Boolean"
+  },
+  "attrForLogin": {
+    "name": "attrForLogin",
+    "value": "sAMAccountName",
+    "attrDependentOf": "ldapServerVendor",
+    "typeDescription": "String: NonNull",
+    "metadata": {
+      "ldapServerVendorMap": {
+        "Other providers": "cn",
+        "Novell": "cn",
+        "Microsoft Active Directory": "sAMAccountName",
+        "Sun ONE/iPlanet": "uid",
+        "IBM": "cn",
+        "OpenLDAP": "uid",
+        "HP-UX": "uid"
+      }
+    }
+  },
+  "attrForUsername": {
+    "name": "attrForUsername",
+    "value": "cn",
+    "attrDependentOf": "ldapServerVendor",
+    "typeDescription": "String: NonNull",
+    "metadata": {
+      "ldapServerVendorMap": {
+        "Other providers": "cn",
+        "Novell": "cn",
+        "Microsoft Active Directory": "cn",
+        "Sun ONE/iPlanet": "cn",
+        "IBM": "cn",
+        "OpenLDAP": "cn",
+        "HP-UX": "cn"
+      }
+    }
+  },
+  "attrForGroupName": {
+    "name": "attrForGroupName",
+    "value": "cn",
+    "attrDependentOf": "ldapServerVendor",
+    "typeDescription": "String: NonNull",
+    "metadata": {
+      "ldapServerVendorMap": {
+        "Other providers": "cn",
+        "Novell": "cn",
+        "Microsoft Active Directory": "cn",
+        "Sun ONE/iPlanet": "cn",
+        "IBM": "cn",
+        "OpenLDAP": "cn",
+        "HP-UX": "cn"
+      }
+    }
+  },
+  "syncWithWinAuth": {
+    "name": "syncWithWinAuth",
+    "value": false,
+    "typeDescription": "Boolean"
+  },
+  "syncWithTrustedAuth": {
+    "name": "syncWithTrustedAuth",
+    "value": false,
+    "typeDescription": "Boolean"
+  },
+  "attrIntegratedAuthUniqueId": {
+    "name": "attrIntegratedAuthUniqueId",
+    "typeDescription": "String"
+  },
+  "emailType": {
+    "name": "emailType",
+    "value": "Generic email",
+    "typeDescription": "String",
+    "metadata": {
+      "emailDevices": [
+        "Microsoft Outlook Express",
+        "Webmail",
+        "Generic email",
+        "Microsoft Outlook",
+        "Microsoft Outlook Web Access"
+      ]
+    }
+  },
+  "attrForEmail": {
+    "name": "attrForEmail",
+    "typeDescription": "String"
+  },
+  "extraAttrsToImport": {
+    "name": "extraAttrsToImport",
+    "value": {},
+    "typeDescription": "Json"
+  },
+  "allowLoginIfNotLinked": {
+    "name": "allowLoginIfNotLinked",
+    "value": false,
+    "typeDescription": "Boolean"
+  },
+  "timeout": {
+    "name": "timeout",
+    "value": 120,
+    "typeDescription": "Int"
+  }
+}
