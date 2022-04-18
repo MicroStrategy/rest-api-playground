@@ -1,0 +1,14 @@
+{
+  "errors": [
+      {
+          "code": "8004cc4c",
+          "message": "The X-MSTR-MS-Changeset '{{rd_changesetId}}' is invalid.",
+          "additionalProperties": {
+              "arguments": [
+                  "X-MSTR-MS-Changeset",
+                  "{{rd_changesetId}}"
+              ]
+          }
+      }
+  ]
+}
