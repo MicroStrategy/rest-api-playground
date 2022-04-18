@@ -1,0 +1,17 @@
+{
+  "code": "string",
+  "iServerCode": 0,
+  "message": "string",
+  "ticketId": "string",
+  "subErrors": [
+    {
+      "iServerCode": 0,
+      "message": "string",
+      "additionalProperties": {
+        "objectId": "string",
+        "objectName": "string"
+      }
+    }
+  ],
+  "additionalProperties": {}
+}
