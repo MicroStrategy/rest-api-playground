@@ -25,3 +25,9 @@ To get started, watch his [video](https://youtu.be/cIDhJpA_5Qk).
 * Check out more examples and demos at https://github.com/MicroStrategy
 
 
+## How to contribute?
+
+You can be a part of the project in the following ways. 
+* Reporting issues in [Github / Issues](https://github.com/MicroStrategy/rest-api-playground/issues).  
+* Sending feedback and questions in [Github / Discussions](https://github.com/MicroStrategy/rest-api-playground/discussions).
+* Fixing bugs in Postman scripts or adding new workflows using Postman's Pull Request feature. 
