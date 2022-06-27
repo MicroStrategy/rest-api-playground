@@ -168,7 +168,7 @@ You should always review your own PR first.
 
 For changes, make sure that you:
 
-- [ ]Pull the latest changes from the source to confirm the changes will have the expected behavior(folder order, etc...). This helps spot issues like typos and content that doesn't follow the [contribution guide](#contribution-guide).
+- [ ] Pull the latest changes from the source to confirm the changes will have the expected behavior(folder order, etc...). This helps spot issues like typos and content that doesn't follow the [contribution guide](#contribution-guide).
 - [ ] Review the content for technical accuracy.
 - [ ] Run the API or Workflow in Postman in a demo or new cloud environment.
 - [ ] Check if the API or Workflow is available publicly or on demo server yet. If it isn't the PR will not approved.
