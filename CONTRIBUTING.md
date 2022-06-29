@@ -20,9 +20,9 @@
 
 Before you begin:
 - Be sure to create an account in [postman](https://www.postman.com/) if you don't already have one.
-  If you are unfamilar with the postman interface be sure to checkout the [learning center in postman](https://learning.postman.com/docs/getting-started/introduction/)
-- Have you read the [code of conduct](CODE_OF_CONDUCT.md)?
-- Check out the [existing issues](https://github.com/MicroStrategy/rest-api-playground/issues)
+  If you are unfamilar with the postman interface be sure to checkout the [learning center in postman](https://learning.postman.com/docs/getting-started/introduction/).
+- Read the [code of conduct](CODE_OF_CONDUCT.md)?
+- Check out the [existing issues](https://github.com/MicroStrategy/rest-api-playground/issues).
 - Check out this [video](https://www.youtube.com/watch?v=cIDhJpA_5Qk) to get started with our REST API Playground.
 
 ## :beetle: Issues
@@ -80,7 +80,7 @@ There are many different types of [variables](https://learning.postman.com/docs/
 
 #### Environment Variables
 
-Environment variables are scoped to the [environment](https://learning.postman.com/docs/sending-requests/managing-environments/) you selected. We provide two environments in our playground. One is the [demo environment](https://www.postman.com/microstrategysdk/workspace/microstrategy-rest-api/environment/16131298-aac3a1ea-b878-488a-bf80-f4dc5f50a831) environment and the other is a [template](https://www.postman.com/microstrategysdk/workspace/microstrategy-rest-api/environment/16131298-531df55b-93e4-4911-a93d-6d853455e9c5) for a new cloud environment.
+Environment variables are scoped to the [environment](https://learning.postman.com/docs/sending-requests/managing-environments/) you selected. We provide two environments in our playground. One is the [demo environment](https://www.postman.com/microstrategysdk/workspace/microstrategy-rest-api/environment/16131298-aac3a1ea-b878-488a-bf80-f4dc5f50a831) and the other is a [template](https://www.postman.com/microstrategysdk/workspace/microstrategy-rest-api/environment/16131298-531df55b-93e4-4911-a93d-6d853455e9c5) for a new cloud environment.
 
 In these environments, we provide some long-lived environment variables such as:
 - baseUrl
@@ -122,8 +122,8 @@ For local variable naming convention and usage:
 
 - The title of the folder should be in "Title Case". "This is an Example".
 - Each folder under the collection should have a description describing the contents under it.
-- Folders can have folders nested within it
-- If the folder is based on an existing page in API docs try to structure it similar to the docs. Though you can simplify workflows if they feel redundant
+- Folders can have folders nested within it.
+- If the folder is based on an existing page in API docs try to structure it similar to the docs. Though you can simplify workflows if they feel redundant.
 - You can set variables in the pre-request script if it applies to everything in folder.
 
 ### APIs
@@ -137,21 +137,22 @@ For local variable naming convention and usage:
     - The title of api does not need to be the same as in the swagger docs.
     - Use "Login" instead of "Returns Authorization Token"
     - Use "Logout" instead of "Close all existing sessions for the authenticated user"
-    - Apis do not need all optional params or headers. This is optional.
+    - APIs do not need all optional params or headers. This is optional.
   - In the [api](https://www.postman.com/microstrategysdk/workspace/microstrategy-rest-api/collection/16131298-15ac2bcb-1b3c-4be4-81b2-c3defec602ad) collection:
     - The title of the api should match the swagger docs.
-    - Apis should contain all optional params or headers.
+    - APIs should contain all optional params or headers.
 
 ### Workflows
 
-- Workflows based on existing documentation should try to match/structure based on the documentation.
+- Workflows, based on existing documentation, should try to match/structure based on the documentation.
+  Workflows, not based on existing documentation, should have a more thorough description. If the workflow cuts across multiple different api families, put the workflow in a folder that pertains most closely to the workflow or create a new folder, if no folder matches it close enough.
 - Workflows should work either in a demo environment or newly created cloud environment. If setup is needed include it in documentation.
 - Don't cause permanent unrevocable changes in a workflow without user explicitly editing the workflow.
   This means: 
   - Most of time you want to create a new object to showcase editing/modification workflow.
   - Delete any created objects at the end of workflow to clean up space.
   - Revert any changes by apis to existing objects at end of workflow.
-- Try to use a folder existing in demo or newly created environment to store newly created objects. Such as "publicReportsFolderId" in environments or "publicObjectsFolderId"
+- Try to use a folder existing in demo or newly created environment to store newly created objects. Such as `publicReportsFolderId` in environments or `publicObjectsFolderId`.
 - All workflows with "Login" api should have "Logout" api, "Logout" should unset all used variables.
 
 ## Reviewing
@@ -171,7 +172,7 @@ For changes, make sure that you:
 - [ ] Pull the latest changes from the source to confirm the changes will have the expected behavior(folder order, etc...). This helps spot issues like typos and content that doesn't follow the [contribution guide](#contribution-guide).
 - [ ] Review the content for technical accuracy.
 - [ ] Run the API or Workflow in Postman in a demo or new cloud environment.
-- [ ] Check if the API or Workflow is available publicly or on demo server yet. If it isn't the PR will not approved.
+- [ ] Check if the API or Workflow is available publicly or on demo server yet. If it isn't the PR will not be approved.
 
 ### Comments 
 
