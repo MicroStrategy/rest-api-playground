@@ -94,29 +94,29 @@ Note: In the template environment, please change these values to suit your envir
 Environment variables are used to store values that may be used across more than one apis or workflows. For PRs that add/modify content from our collections, you can create/edit these variables through [pre-request scripts and tests](https://learning.postman.com/docs/sending-requests/managing-environments/#setting-environment-variables-from-scripts).
 
 For environment variable naming convention and usage:
-1. We adopt camelCase for variable names.
-  An example can be "`dossierId`" instead of "`DossierID`".
-2. We enforce a "rd_" prefix to runtime generated environment variables(set inside test scripts or pre-request scripts).
-  An example can be "rd_instanceId". This variable is set in the test script of an instance creation api.
-3. We do not have a "rd_" prefix to long-lived environment variables nor using non-runtime environment variables.
-  An example can be "`dossierId`" instead of "`rd_dossierId`" because we plan to use the provided "`dossierId`" in the environment rather than the runtime generated one.
-4. There are special rules that apply to each collection
+- We adopt camelCase for variable names.
+  An example can be `dossierId` instead of `DossierID`.
+- We enforce a "rd_" prefix to runtime generated environment variables(set inside test scripts or pre-request scripts).
+  An example can be `rd_instanceId`. This variable is set in the test script of an instance creation api.
+- We do not have a "rd_" prefix to long-lived environment variables nor using non-runtime environment variables.
+  An example can be `dossierId` instead of `rd_dossierId` because we plan to use the provided `dossierId` in the environment rather than the runtime generated one.
+- There are special rules that apply to each collection
   - In the [workflow](https://www.postman.com/microstrategysdk/workspace/microstrategy-rest-api/collection/16131298-9ba9a108-18ee-438e-8f4f-df058f265f1b) collection:
     - Use runtime environment variables and long-lived environment variables for the path/params/headers/body of api when possible.
-      An example can be we will want to use "`rd_dossierId`" rather than "`dossierId`", because we can not assure the "`dossierId`" will work for every workflow. Hence, we want to generate it at runtime rather than using the existing one in environment.
+      An example can be we will want to use `rd_dossierId` rather than `dossierId`, because we can not assure the `dossierId` will work for every workflow. Hence, we want to generate it at runtime rather than using the existing one in environment.
   - In the [api](https://www.postman.com/microstrategysdk/workspace/microstrategy-rest-api/collection/16131298-15ac2bcb-1b3c-4be4-81b2-c3defec602ad) collection:
     - Use non-runtime environment variables and long-lived environment variables for GET apis' path/params/headers/body when possible.
-      An example can be using "`dossierId`" instead of "`rd_dossierId`" and "`rd_instanceId`" instead of "`instanceId`". In our pre-request script, we will change the "`dossierId`" to "`rd_dossierId`" at runtime automatically if "`dossierId`" is empty, so you can still set in pre-request or test-scripts the "`rd_dossierId`" if the "`dossierId`" was not provided in the environment. Meanwhile for "`rd_instanceId`", the "`instanceId`" can not be provided in non-runtime(it's different every time) hence the "rd_" prefix.
+      An example can be using `dossierId` instead of `rd_dossierId` and `rd_instanceId` instead of `instanceId`. In our pre-request script, we will change the `dossierId` to `rd_dossierId` at runtime automatically if `dossierId` is empty, so you can still set in pre-request or test-scripts the `rd_dossierId` if the `dossierId` was not provided in the environment. Meanwhile for `rd_instanceId`, the `instanceId` can not be provided in non-runtime(it's different every time) hence the "rd_" prefix.
     - Use runtime environment variables and long-lived environment variable for apis that will edit(POST, PUT, DELETE, PATCH) in path/params/headers/body when possible
-      An example can be using "`rd_dossierId`" instead of "`dossierId`" for a deletion api, we don't want users accidentally deleting one of the default provided dossiers in environment. Hence, we make them have to manually change it to "`dossierId`" or delete a runtime created one.
+      An example can be using `rd_dossierId` instead of `dossierId` for a deletion api, we don't want users accidentally deleting one of the default provided dossiers in environment. Hence, we make them have to manually change it to `dossierId` or delete a runtime created one.
 
 #### Local Variables
 
 [Local variables](https://learning.postman.com/docs/sending-requests/variables/#variable-scopes) are scoped to the api or request script. They are no longer avaiable once the run is complete. In our playground, we use it in the test scripts to simplify and parse response jsons.
 
 For local variable naming convention and usage: 
-1. Use it when it is only going to be used in that single request/api and if it makes it easier to get the information you want
-2. Have a name that makes sense(no particular requirement)
+- Use it when it is only going to be used in that single request/api and if it makes it easier to get the information you want
+- Have a name that makes sense(no particular requirement)
 
 ### Folders
 
