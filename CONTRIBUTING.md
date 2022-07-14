@@ -21,7 +21,7 @@
 Before you begin:
 - Be sure to create an account in [postman](https://www.postman.com/) if you don't already have one.
   If you are unfamilar with the postman interface be sure to checkout the [learning center in postman](https://learning.postman.com/docs/getting-started/introduction/).
-- Read the [code of conduct](CODE_OF_CONDUCT.md)?
+- Read the [code of conduct](CODE_OF_CONDUCT.md).
 - Check out the [existing issues](https://github.com/MicroStrategy/rest-api-playground/issues).
 - Check out this [video](https://www.youtube.com/watch?v=cIDhJpA_5Qk) to get started with our REST API Playground.
 
