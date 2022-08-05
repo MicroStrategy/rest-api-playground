@@ -172,7 +172,7 @@ For changes, make sure that you:
 - [ ] Pull the latest changes from the source to confirm the changes will have the expected behavior(folder order, etc...). This helps spot issues like typos and content that doesn't follow the [contribution guide](#contribution-guide).
 - [ ] Review the content for technical accuracy.
 - [ ] Run the api or workflow in Postman in a demo or new cloud environment.
-- [ ] Check if the api or workflow is available publicly or on demo server yet. If it isn't the PR will not be approved. In situations, where the api or workflow is available publicly but not on the demo server yet, it will only be approved if it does not cause breaking changes to the existing apis or workflow that runs on the demo server.
+- [ ] Check if the API or workflow is available publicly or on demo server yet. If it isn't the PR will not be approved. In situations, where the api or workflow is available publicly but not on the demo server yet, it will only be approved if it does not cause breaking changes to the existing APIs or workflow that runs on the demo server.
 
 ### Comments 
 
