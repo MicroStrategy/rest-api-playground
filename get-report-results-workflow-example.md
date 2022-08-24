@@ -50,17 +50,17 @@ MicroStrategy's REST API gives developers the ability to execute MicroStrategy r
 
 1. Find "Create a Report Instance and Get Definition" under "Data API" -> "Report" and duplicate the folder.
 
-   ![duplicate folder](./images/get-report-results-workflow-example/duplicate-folder.jpeg)
+   ![Duplicate folder](./images/get-report-results-workflow-example/duplicate-folder.jpeg)
 
 1. Pull the folder into your "Get Report Results" folder. You can rename as you see fit, or even pull each call out into the Get Report Results folder – it's up to you.
 
-   ![copy folder to newly created folder](./images/get-report-results-workflow-example/copy-folder-to-newly-created-folder.jpeg)
+   ![Copy folder to newly created folder](./images/get-report-results-workflow-example/copy-folder-to-newly-created-folder.jpeg)
 
 1. This workflow has 5 calls: Login, Get Report, Create Instance of Report, Get Report Definition, Logout. Running these calls in this order will Log you into your environment, find your specified report, "run" and instantiate the report, return the definition of the report (including its data) and log you out of your environment. Let's change the "Get Report" call to call a specific report in our environment. For this example, I'm going to get a report I created called "Locations and Sales by Month". For the rest of this example, use your desired report instead of "Locations and Sales by Month".
 
 1. Click on the "Get Report" call under your "Get Report Results" folder. You will see the call's Parameters. Here, we want to change the value of the "name" parameter from "Forecast (Grid)" to your report name. For me, this will be "Locations and Sales by Month". Type=3 means "Report" as you can see in [EnumDSSXMLObjectTypes](https://www2.microstrategy.com/producthelp/Current/ReferenceFiles/reference/com/microstrategy/webapi/EnumDSSXMLObjectTypes.html). Don't forget to **Save** your changes!
 
-   ![change value of name parameter](./images/get-report-results-workflow-example/change-value-of-name-parameter.jpeg)
+   ![Change value of name parameter](./images/get-report-results-workflow-example/change-value-of-name-parameter.jpeg)
 
 1. **NOTE:** Take a look at the **Headers**. This is where we will pass some environment variables with our call. You will see `X-MSTR-AuthToken` and `X-MSTR-ProjectID`. These tell your MicroStrategy server that your logged in and which project to search when we search for a Grid Report (Type 3) named with the value we used for the "name" Parameter. No changes to be made here, just good stuff to understand.
 
@@ -68,7 +68,7 @@ MicroStrategy's REST API gives developers the ability to execute MicroStrategy r
 
 1. Let's check our running of the report in our POST call to Create an Instance of the Report. Here we see that we will pull in the value of the report from the previous call and pass it through the `{{rd_reportId}}` variable. No changes here either!
 
-   ![no-change-in-create-an-instance-of-repor-post-call](./images/get-report-results-workflow-example/no-change-in-create-an-instance-of-repor-post-call.jpeg)
+   ![No change in create an instance of report POST call](./images/get-report-results-workflow-example/no-change-in-create-an-instance-of-report-post-call.jpeg)
 
 1. Finally, let's check our "Get Report Definition" GET call. Here we see the 2 key parameters, `{{rd_reportID}}` and `{{rd_reportInstanceId}}`. This tells your MicroStrategy server to get the results of the report with the specified ID and fetch the "run" of that report with the specified report instance id (the one we created with the POST call in the previous step). No changes to be made here either!
 
@@ -92,7 +92,7 @@ MicroStrategy's REST API gives developers the ability to execute MicroStrategy r
 
    ![Result of 2nd GET call](./images/get-report-results-workflow-example/result-of-2nd-get-call.jpeg)
 
-   ![image.png](./images/get-report-results-workflow-example/response-in-log.jpeg)
+   ![Response in log](./images/get-report-results-workflow-example/response-in-log.jpeg)
 
 For Reference, here is the report ran in MicroStrategy Web:
 
