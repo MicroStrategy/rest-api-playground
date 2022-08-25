@@ -1,4 +1,4 @@
-# KB485553: Use the MicroStrategy REST API and Postman to Get Report Results
+# Use the MicroStrategy REST API and Postman to Get Report Results
 
 MicroStrategy's REST API gives developers the ability to execute MicroStrategy reports and return their data. This example will find a report, run it, and return its data using MicroStrategy's REST API in Postman. This article will give you steps to begin using MicroStrategy's REST API in your own workspace within Postman and show you how to run a workflow that returns the results of a specific report. This is valuable for when you want to take advantage of MicroStrategy's reporting and integrate with your organization's API ecosystem. The example in this article will give you the framework to build your own workflows and help you take advantage of MicroStrategy's powerful REST API and Postman's easy to use interface - a perfect combination for those who want to use MicroStrategy's REST API but are unsure how to get started.
 
@@ -98,8 +98,5 @@ For Reference, here is the report ran in MicroStrategy Web:
 
 ![Report ran in MicroStrategy Web](./images/get-report-results-workflow-example/report-ran-in-microstrategy-web.jpeg)
 
-- **Published:** Jun 21, 2022
-- **Last updated:** Aug 11, 2022
-- **Related versions:** 2021 (All Updates)
-- **Author:** Aaron Ehrlich (SSE)
+- **Author:** Aaron Ehrlich (Senior Sales Engineer, MicroStrategy)
 - Original source: [KB485553: Use the MicroStrategy REST API and Postman to Get Report Results](https://community.microstrategy.com/s/article/Use-the-MicroStrategy-REST-API-and-Postman-to-Get-Report-Results?language=en_US)
