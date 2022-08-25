@@ -90,9 +90,9 @@ MicroStrategy's REST API gives developers the ability to execute MicroStrategy r
 
 1. Now look in the results of the 2nd GET call – you should see your report data in the response body of the call:
 
-   ![Result of 2nd GET call](./images/get-report-results-workflow-example/result-of-2nd-get-call.jpeg)
-
    ![Response in log](./images/get-report-results-workflow-example/response-in-log.jpeg)
+
+   ![Result of 2nd GET call](./images/get-report-results-workflow-example/result-of-2nd-get-call.jpeg)
 
 For Reference, here is the report ran in MicroStrategy Web:
 
