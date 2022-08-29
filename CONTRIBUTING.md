@@ -1,24 +1,28 @@
 # Contribution Guide For REST API Playground
-- [Getting started](#getting-started)
-- [:beetle: Issues](#beetle-issues)
-- [:hammer_and_wrench: Pull requests](#hammer_and_wrench-pull-requests)
-  - [Ready to make a change? Fork the collection](#ready-to-make-a-change-fork-the-collection)
-  - [Done making your changes? Make a pull request](#done-making-your-changes-make-a-pull-request)
-  - [Review after submitting the pull request](#review-after-submitting-the-pull-request)
-  - [Your pull request is merged!](#your-pull-request-is-merged)
-- [Contribution Guide](#contribution-guide)
-  - [Variables](#variables)
-    - [Environment Variables](#environment-variables)
-    - [Local Variables](#local-variables)
-  - [Folders](#folders)
-  - [APIs](#apis)
-  - [Workflows](#workflows)
-- [Reviewing](#reviewing)
-  - [Self review](#self-review)
-  - [Comments](#comments)
+
+- [Contribution Guide For REST API Playground](#contribution-guide-for-rest-api-playground)
+  - [Getting Started](#getting-started)
+  - [:beetle: Issues](#beetle-issues)
+  - [:hammer_and_wrench: Pull requests](#hammer_and_wrench-pull-requests)
+    - [Ready to make a change? Fork the collection](#ready-to-make-a-change-fork-the-collection)
+    - [Done making your changes? Make a pull request](#done-making-your-changes-make-a-pull-request)
+    - [Review after submitting the pull request](#review-after-submitting-the-pull-request)
+    - [Your pull request is merged](#your-pull-request-is-merged)
+  - [Contribution Guide](#contribution-guide)
+    - [Variables](#variables)
+      - [Environment Variables](#environment-variables)
+      - [Local Variables](#local-variables)
+    - [Folders](#folders)
+    - [APIs](#apis)
+    - [Workflows](#workflows)
+  - [Reviewing](#reviewing)
+    - [Self review](#self-review)
+    - [Comments](#comments)
+
 ## Getting Started
 
 Before you begin:
+
 - Be sure to create an account in [postman](https://www.postman.com/) if you don't already have one.
   If you are unfamilar with the postman interface be sure to checkout the [learning center in postman](https://learning.postman.com/docs/getting-started/introduction/).
 - Read the [code of conduct](CODE_OF_CONDUCT.md).
@@ -45,15 +49,16 @@ We recommend forking to a private [workspace](https://learning.postman.com/docs/
 
 The naming convention of the fork is not enforced, however we recommend naming the fork after the folder you are modifying/adding. If you are modifying/adding more than folder name it after the type of change you are making.
 
-If you have your changes in a non forked collection, make the changes in the forked collection. You can do this manually or by dragging and adding/replacing the apis or folders you made changes to/for. 
+If you have your changes in a non forked collection, make the changes in the forked collection. You can do this manually or by dragging and adding/replacing the apis or folders you made changes to/for.
 
 See [Contribution Guide](#contribution-guide) for details on the specifics on the conventions and changes you should make.
 
 ### Done making your changes? Make a pull request
 
-To [make a pull request](https://learning.postman.com/docs/collaborating-in-postman/version-control/#creating-pull-requests), your forked collection must be in a public workspace. If your forked collection is not in a public workspace, you need to [move the collection to the public workspace](https://learning.postman.com/docs/collaborating-in-postman/using-workspaces/managing-workspaces/#moving-elements-to-workspaces). 
+To [make a pull request](https://learning.postman.com/docs/collaborating-in-postman/version-control/#creating-pull-requests), your forked collection must be in a public workspace. If your forked collection is not in a public workspace, you need to [move the collection to the public workspace](https://learning.postman.com/docs/collaborating-in-postman/using-workspaces/managing-workspaces/#moving-elements-to-workspaces).
 
 Next follow these conventions for filling out the pull request:
+
 - Title the pull request apprioriately based on the change being made and follow [code of conduct](CODE_OF_CONDUCT.md).
 - Have a description of the changes you make so we understand what the pull request is doing.
 - Put MicroStrategy Developer as the reviewer.
@@ -63,13 +68,14 @@ Next follow these conventions for filling out the pull request:
 - Once you submit your PR, we will review it. But, the first thing you're going to want to do is a [self review](#self-review).
 - After that, we may have questions, check back on your PR to keep up with the conversation.
 
-### Your pull request is merged!
+### Your pull request is merged
 
 Congratulations! The whole MicroStrategy community thanks you. :sparkles:
 
 ## Contribution Guide
 
-As you make changes keep the following in mind: 
+As you make changes keep the following in mind:
+
 1. If the api is not available publicly, we will not add the api workflow in playground.
 2. All the workflow in playground should be ready to use in demo or brand new cloud environment without server side setup.
 3. Exception to (2), if the workflow requires some configuration, we should clearly document the requirement in documentation.
@@ -83,6 +89,7 @@ There are many different types of [variables](https://learning.postman.com/docs/
 Environment variables are scoped to the [environment](https://learning.postman.com/docs/sending-requests/managing-environments/) you selected. We provide two environments in our playground. One is the [demo environment](https://www.postman.com/microstrategysdk/workspace/microstrategy-rest-api/environment/16131298-aac3a1ea-b878-488a-bf80-f4dc5f50a831) and the other is a [template](https://www.postman.com/microstrategysdk/workspace/microstrategy-rest-api/environment/16131298-531df55b-93e4-4911-a93d-6d853455e9c5) for a new cloud environment.
 
 In these environments, we provide some long-lived environment variables such as:
+
 - baseUrl
 - projectId
 - username
@@ -94,6 +101,7 @@ Note: In the template environment, please change these values to suit your envir
 Environment variables are used to store values that may be used across more than one apis or workflows. For PRs that add/modify content from our collections, you can create/edit these variables through [pre-request scripts and tests](https://learning.postman.com/docs/sending-requests/managing-environments/#setting-environment-variables-from-scripts).
 
 For environment variable naming convention and usage:
+
 - We adopt camelCase for variable names.
   An example can be `dossierId` instead of `DossierID`.
 - We enforce a "rd_" prefix to runtime generated environment variables(set inside test scripts or pre-request scripts).
@@ -114,9 +122,10 @@ For environment variable naming convention and usage:
 
 [Local variables](https://learning.postman.com/docs/sending-requests/variables/#variable-scopes) are scoped to the api or request script. They are no longer avaiable once the run is complete. In our playground, we use it in the test scripts to simplify and parse response jsons.
 
-For local variable naming convention and usage: 
-- Use it when it is only going to be used in that single request/api and if it makes it easier to get the information you want
-- Have a name that makes sense(no particular requirement)
+For local variable naming convention and usage:
+
+- Use it when it is only going to be used in that single request/api and if it makes it easier to get the information you want.
+- Have a name that makes sense(no particular requirement).
 
 ### Folders
 
@@ -148,7 +157,8 @@ For local variable naming convention and usage:
   Workflows, not based on existing documentation, should have a more thorough description. If the workflow cuts across multiple different api families, put the workflow in a folder that pertains most closely to the workflow or create a new folder, if no folder matches it close enough.
 - Workflows should work either in a demo environment or newly created cloud environment. If setup is needed include it in documentation.
 - Don't cause permanent unrevocable changes in a workflow without user explicitly editing the workflow.
-  This means: 
+  This means:
+
   - Most of time you want to create a new object to showcase editing/modification workflow.
   - Delete any created objects at the end of workflow to clean up space.
   - Revert any changes by apis to existing objects at end of workflow.
@@ -174,7 +184,7 @@ For changes, make sure that you:
 - [ ] Run the API or workflow in Postman in a demo or new cloud environment.
 - [ ] Check if the API or workflow is available publicly or on demo server yet. If it isn't the PR will not be approved. In situations, where the api or workflow is available publicly but not on the demo server yet, it will only be approved if it does not cause breaking changes to the existing APIs or workflow that runs on the demo server.
 
-### Comments 
+### Comments
 
 We may ask for clarification or changes in the comments on the PR in postman.
 
