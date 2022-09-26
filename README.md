@@ -20,7 +20,7 @@ To get started, watch his [video](https://youtu.be/cIDhJpA_5Qk).
 
 ## Other Useful information
 
-- [An workflow example of using MicroStrategy REST API Playground to get report results](./get-report-results-workflow-example)
+- [An workflow example of using MicroStrategy REST API Playground to get report results](./get-report-results-workflow-example.md)
 - If you are interested in Embedded Analytics solutions, play with our Embedding SDK Playground at [playground.microstrategy.com](https://playground.microstrategy.com).
 - You can also visit our [Swagger API-Docs page](https://demo.microstrategy.com/MicroStrategyLibrary/api-docs/index.html) or in your Library environment.
 - Check out more examples and demos [here](https://github.com/MicroStrategy).
